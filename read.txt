@@ -1,1 +1,41 @@
+Overview
+Selenium is a Firefox plugin that can open webpages and verify that certain text is present. We use it to verify that production servers are pointed to the correct DAS and DTA servers and D1 port and have the right version of code by using Selenium to verify text on their dashboards (e.g. http://pacdcdtaapp02:8180/agent-ivr/dashboard/). To run QA's set of Selenium tests, you'll need to:
 
+Download the Selenium Firefox plugin, and
+Download QA's set of test cases and open in Selenium
+Step 1: Download Selenium
+Go to http://seleniumhq.org/download/ and download the latest version of Selenium IDE.
+Install the Selenium IDE plugin in Firefox.
+Once it's installed,
+
+Step 2: Download Prod Tests and Open in Selenium
+NOTE: There are now two ways to run the Selenium Tests: QA Server (X: drive) or locally (C: drive). Running Selenium from the "QA Server" means that the "iteration_number.html" is globally changed for all testers that need to run Selenium tests against the production environment. Running Selenium "locally" means each tester is responsible to ensure that his/her "iteration_number.html" file is current per iteration prior to use.
+
+QA Server (X: drive)
+
+First Step: Map shared folder to host computer Map : \\pacdcucrqaa01\DIVR_QA\xIVR QA\selenium Steps: 1. Open My Computer 2. Tools - > Map Network Drive 3. Drive: X: 4. Folder: \\pacdcucrqaa01\DIVR_QA\xIVR QA\selenium 5. X drive should be in my computer now.
+
+ 
+
+Second Step: Run Selenium Steps: 1. Open Selenium 2. File -> Open Navigate to new mapped drive X: 3. Open the test cases you want to run (example File: “All test”) Note: PLEASE ONLY UPDATE file iteration_number. Do not update any other file.
+
+
+Locally (C: drive)
+
+Download Selenium PROD tests from XIVR_Test_Case_Documents.
+Unzip the file to c:\selenium (Note: Tests will not work if you do not.)
+In Firefox, go to Tools > Selenium IDE
+Once Selenium opens, go to File > Open Test Suite...
+Navigate to c:\selenium and select the test set you want to run
+Click Open
+
+If you opened the test suite successfully, you will see a list of tests cases in Selenium IDE that are ready to be run.
+
+QA Test Environment
+ 
+The following file contains the Selenium test files for the QA test environment:
+File:QA Selenium Tests.zip
+  
+Unzip the file to "C:\QA_Selenium" (note: Tests will not work if you do not).
+ 
+The status of the QA test environments should be verified before, during, and after formal testing cycles.
